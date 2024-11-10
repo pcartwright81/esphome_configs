@@ -1,0 +1,17 @@
+substitutions:
+  name: big-garage-door
+  friendly_name: Big Garage Door
+packages:
+  Athom_Technology.Garage_Door_Opener: github://athom-tech/esp32-configs/athom-garage-door.yaml
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false
+  friendly_name: ${friendly_name}
+api:
+  encryption:
+    key: 1pnwcwGOa07U0P5O+4aOGm0HdC3f9Slzz158B8bm0Cg=
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password

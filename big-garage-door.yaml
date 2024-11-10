@@ -1,0 +1,9 @@
+substitutions:
+  device_name: "big-garage-door"
+  device_id: "big_garage_door"
+  friendly_name: "Big Garage Door"
+  room: "Big Garage"
+  status_inverted: "true"
+
+packages:
+  device_basis: !include templates/athom_garage_door.yaml

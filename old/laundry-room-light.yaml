@@ -1,0 +1,6 @@
+substitutions:
+  device_name: laundry-room-light
+  device_id: laundry_room_light
+  friendly_name: Laundry Room Light
+  icon: mdi-lightbulb
+<<: !include templates/treatlife_three_way.yaml

@@ -1,0 +1,80 @@
+packages:
+  device_basis: !include network_ha_config.yaml
+
+#Configuration for EFUN SH3331W Smart Plug
+esphome:
+  name: ${device_name}
+  friendly_name: "${friendly_name}"
+  platform: ESP8266
+  board: esp01_1m
+  area: "${room}"
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO13
+      inverted: True
+    name: ${device_name}_button
+    on_press:
+      then:
+        - switch.toggle: ${device_id}_Relay
+    internal: true
+
+status_led:
+  # https://esphome.io/components/status_led
+  pin:
+    number: GPIO0 # Red LED
+    inverted: True
+
+switch:
+  - platform: gpio
+    name: ${friendly_name}
+    id: ${device_id}_Relay
+    pin: GPIO15
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - switch.toggle: ${device_id}_LED_Blue
+    on_turn_off:
+      - switch.toggle: ${device_id}_LED_Blue
+  - platform: gpio
+    name: ${device_name}_LED_Blue
+    id: ${device_id}_LED_Blue
+    pin: GPIO2
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    internal: true
+  - platform: gpio
+    name: ${device_name}_ESP_LED
+    pin: GPIO4
+    inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    internal: true
+
+sensor:
+  - platform: hlw8012
+    sel_pin:
+      number: GPIO12
+      inverted: True
+    cf_pin: GPIO05
+    cf1_pin: GPIO14
+    current_resistor: ${current_res}
+    voltage_divider: ${voltage_div}
+    current:
+      name: ${friendly_name} Amperage
+      unit_of_measurement: A
+    voltage:
+      name: ${friendly_name} Voltage
+      unit_of_measurement: V
+    power:
+      name: ${friendly_name} Wattage
+      unit_of_measurement: W
+      id: ${device_id}_Wattage
+    change_mode_every: 8
+    update_interval: 10s
+  - platform: total_daily_energy
+    name: ${friendly_name} Total Daily Energy
+    power_id: ${device_id}_Wattage
+    filters:
+      # Multiplication factor from W to kW is 0.001
+      - multiply: 0.001
+    unit_of_measurement: kWh

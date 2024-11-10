@@ -1,0 +1,8 @@
+substitutions:
+  device_name: master-bedroom-fan
+  device_id: master_bedroom_fan
+  friendly_name: Master Bedroom Fan
+  room: Master Bedroom
+
+packages:
+  device_basis: !include templates/treatlife_fan.yaml

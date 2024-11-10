@@ -1,0 +1,7 @@
+substitutions:
+  device_name: master-bathroom-bathtub-light
+  device_id: master_bathroom_bathtub_light
+  friendly_name: Master Bathroom Bathtub Light
+  icon: mdi:lightbulb
+
+<<: !include templates/treatlife_single_pole.yaml

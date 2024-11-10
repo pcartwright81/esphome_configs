@@ -1,0 +1,7 @@
+substitutions:
+  device_name: leo-room-fan
+  device_id: leo_room_fan
+  friendly_name: Leo Room Fan
+  room: Leo Room
+
+<<: !include templates/treatlife_fan.yaml

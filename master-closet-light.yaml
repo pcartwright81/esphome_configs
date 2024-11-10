@@ -1,0 +1,8 @@
+substitutions:
+  device_name: "master-closet-light"
+  friendly_name: "Master Closet Light"
+  icon: mdi:lightbulb
+  room: "Master Bedroom"
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

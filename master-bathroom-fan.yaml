@@ -1,0 +1,7 @@
+substitutions:
+  device_name: master-bathroom-fan
+  device_id: master_bathroom_fan
+  friendly_name: Master Bathroom Fan
+  icon: mdi:fan
+
+<<: !include templates/treatlife_only_fan.yaml

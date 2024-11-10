@@ -1,0 +1,9 @@
+substitutions:
+  device_name: front-porch-light
+  device_id: front_porch_light
+  friendly_name: Front Porch Light
+  icon: mdi:lightbulb
+  room: Front Porch
+
+packages:
+  device_basis:   !include  templates/treatlife_single_pole.yaml

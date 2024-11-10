@@ -1,0 +1,6 @@
+substitutions:
+  device_name: attic-light
+  device_id: attic_light
+  friendly_name: Attic Light
+  icon: mdi:lightbulb  
+<<: !include templates/treatlife_single_pole.yaml

@@ -1,0 +1,9 @@
+substitutions:
+  device_name: "small-garage-door"
+  device_id: "small_garage_door"
+  friendly_name: "Small Garage Door"
+  room: "Small Garage"
+  status_inverted: "true"
+
+packages:
+  device_basis: !include templates/athom_garage_door.yaml

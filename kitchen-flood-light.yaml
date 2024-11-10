@@ -1,0 +1,9 @@
+substitutions:
+  device_name: kitchen-flood-light
+  device_id: kitchen_flood_light
+  friendly_name: Kitchen Flood Light
+  icon: mdi:light
+  room: "Kitchen"
+
+packages:
+  device_basis:   !include  templates/treatlife_single_pole.yaml

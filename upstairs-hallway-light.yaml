@@ -1,0 +1,9 @@
+substitutions:
+  device_name: upstairs-hallway-light
+  device_id: upstairs_hallway_light
+  friendly_name: Upstairs Hallway Light
+  icon: mdi:lightbulb
+  room: "Upstairs Hallway"
+
+packages:
+  device_basis: !include templates/treatlife_three_way.yaml

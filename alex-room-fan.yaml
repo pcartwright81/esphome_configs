@@ -1,0 +1,8 @@
+substitutions:
+  device_name: "alex-room-fan"
+  device_id: "alex_room_fan"
+  friendly_name: "Alex Room Fan"
+  room: "Alex Room"
+
+packages:
+  device_basis: !include templates/treatlife_fan.yaml

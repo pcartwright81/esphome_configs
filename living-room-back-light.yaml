@@ -1,0 +1,7 @@
+substitutions:
+  device_name: living-room-back-light
+  device_id: living_room_back_light
+  friendly_name: Living Room Back Light
+
+packages:
+  device_basis: !include templates/treatlife_three_way_dimmer.yaml

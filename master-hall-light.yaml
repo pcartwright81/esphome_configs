@@ -1,0 +1,9 @@
+substitutions:
+  device_name: master-hall-light
+  device_id: master_hall_light
+  friendly_name: Master Hall Light
+  icon: mdi:lightbulb
+  room: "Master Bedroom"
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml
