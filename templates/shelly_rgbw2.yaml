@@ -3,10 +3,10 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
 
 light:
   - platform: rgbw

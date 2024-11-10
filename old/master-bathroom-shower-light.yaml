@@ -1,6 +1,5 @@
 substitutions:
   device_name: master-bathroom-shower-light
-  device_id: master_bathroom_shower_light
   friendly_name: Master Bathroom Shower Light
   icon: mdi:lightbulb
 

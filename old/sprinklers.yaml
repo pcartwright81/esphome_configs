@@ -1,15 +1,14 @@
 substitutions:
   device_name: sprinklers
-  device_id: sprinklers
   friendly_name: Sprinklers
-  d0_name: ""
-  d1_name: "Flower Beds"
-  d2_name: "Front Lawn Road"
-  d3_name: "Front Lawn"
-  d4_name: "Side Yard Right"
-  d5_name: "Back Yard Right"
-  d6_name: "Back Yard Left"
-  d7_name: ""
+  d0_name: 
+  d1_name: Flower Beds
+  d2_name: Front Lawn Road
+  d3_name: Front Lawn
+  d4_name: Side Yard Right
+  d5_name: Back Yard Right
+  d6_name: Back Yard Left
+  d7_name: 
 
 <<: !include templates/network_ha_config.yaml
 

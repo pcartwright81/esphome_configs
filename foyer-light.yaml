@@ -1,11 +1,8 @@
 substitutions:
   device_name: foyer-light
-  device_id: foyer_light
   friendly_name: Foyer Light
-  icon: mdi:lightbulb 
+  icon: mdi:lightbulb
   room: Foyer
- 
+
 packages:
-  device_basis:   !include  templates/treatlife_single_pole.yaml
-
-
+  device_basis: !include templates/treatlife_single_pole.yaml

@@ -1,12 +1,11 @@
 substitutions:
-  device_name: "ender3v2-switch"
-  device_id: "ender3v2_switch"
-  friendly_name: "Ender3v2"
+  device_name: ender3v2-switch
+  friendly_name: Ender3v2
   # Higher value gives lower watt readout
-  current_res: "0.00221"
+  current_res: 0.00221
   # Lower value gives lower voltage readout
-  voltage_div: "940"
-  room: "Upstairs Closet"
+  voltage_div: 940
+  room: Upstairs Closet
 
 packages:
   device_basis:  !include templates/efun_plug.yaml

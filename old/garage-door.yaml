@@ -1,7 +1,5 @@
 substitutions:
   friendly_name: Garage Door
-  device_name: garage-door
-  device_id: garage_door
 esphome:
   name: ${device_name}
   platform: ESP8266

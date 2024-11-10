@@ -3,10 +3,10 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
 
 output:
   - platform: gpio
@@ -20,7 +20,7 @@ output:
 
 light:
   - platform: binary
-    name: ""
+    name: ' '
     id: light_switch
     output: switch_output
     on_turn_on:

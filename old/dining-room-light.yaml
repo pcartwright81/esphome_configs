@@ -1,6 +1,5 @@
 substitutions:
   device_name: dining-room-light
-  device_id: dining_room_light
   friendly_name: Dining Room Light
 
 <<: !include templates/treatlife_three_way.yaml

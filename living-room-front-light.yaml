@@ -1,6 +1,5 @@
 substitutions:
   device_name: living-room-front-light
-  device_id: living_room_front_light
   friendly_name: Living Room Front Light
   room: Living Room
 

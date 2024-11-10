@@ -1,6 +1,5 @@
 substitutions:
   device_name: back-yard-light
-  device_id: back_yard_light
   friendly_name: Back Yard Light
   icon: mdi:lightbulb
 <<: !include templates/treatlife_single_pole.yaml

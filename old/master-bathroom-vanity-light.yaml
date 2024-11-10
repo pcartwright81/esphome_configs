@@ -1,6 +1,5 @@
 substitutions:
   device_name: master-bathroom-vanity-light
-  device_id: master_bathroom_vanity_light
   friendly_name: Master Bathroom Vanity Light
   icon: mdi:lightbulb
 

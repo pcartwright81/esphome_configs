@@ -1,6 +1,5 @@
 substitutions:
   device_name: pool-light
-  device_id: pool_light
   friendly_name: Pool Light
   icon: mdi:lightbulb
 <<: !include templates/shelly_rgbw2.yaml

@@ -13,10 +13,10 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
 
 status_led:
   pin:
@@ -43,7 +43,7 @@ binary_sensor:
     id: button
     on_press:
       then:
-      - switch.toggle: ${device_id}
+      - switch.toggle: light_switch
     internal: True
 light:
   - platform: binary
@@ -64,7 +64,7 @@ switch:
       number: GPIO5
       inverted: True
       allow_other_uses: true
-    internal: True    
+    internal: True
 
   - platform: gpio
     pin: GPIO12
@@ -73,8 +73,8 @@ switch:
     internal: True
 
   - platform: template
-    name: ${friendly_name}
-    id: ${device_id}
+    name: ' '
+    id: light_switch
     icon: ${icon}
     lambda: |-
       if (id(power_sensor).state) {

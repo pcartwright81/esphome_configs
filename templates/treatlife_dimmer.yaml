@@ -3,10 +3,10 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
    
 uart:
   rx_pin: GPIO3
@@ -17,8 +17,8 @@ tuya:
   time_id : homeassistant_time
   
 light:
-  - platform: "tuya"
-    name: ${friendly_name}
+  - platform: tuya
+    name: ' '
     dimmer_datapoint: 2
     switch_datapoint: 1
     min_value: 100

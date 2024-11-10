@@ -1,45 +1,11 @@
 packages:
   device_basis: !include network_ha_config.yaml
-# substitutions:
-#   # Default name 
-#   name: "athom-garage-door"
-#   # Default friendly name 
-#   friendly_name: "Athom Garage Door"
-#   # Allows ESP device to be automatically linked to an 'Area' in Home Assistant. Typically used for areas such as 'Lounge Room', 'Kitchen' etc
-#   room: ""
-#   # Description as appears in ESPHome & top of webserver page
-#   device_description: "athom esp32-c3 garage door opener"
-#   # Project Name
-#   project_name: "Athom Technology.Garage Door Opener"
-#   # Project version denotes the release version of the yaml file, allowing checking of deployed vs latest version
-#   project_version: "v2.0.3"
-#   # Define a domain for this device to use. i.e. iot.home.lan (so device will appear as athom-smart-plug-v2.iot.home.lan in DNS/DHCP logs)
-#   dns_domain: ""
-#   # Set timezone of the smart plug. Useful if the plug is in a location different to the HA server. Can be entered in unix Country/Area format (i.e. "Australia/Sydney")
-#   timezone: ""
-#   # Set the duration between the sntp service polling ntp.org servers for an update
-#   sntp_update_interval: 6h
-#   # Network time servers for your region, enter from lowest to highest priority. To use local servers update as per zones or countries at: https://www.ntppool.org/zone/@
-#   sntp_server_1: "0.pool.ntp.org"
-#   sntp_server_2: "1.pool.ntp.org"
-#   sntp_server_3: "2.pool.ntp.org"    
-#   # Enables faster network connections, with last connected SSID being connected to and no full scan for SSID being undertaken
-#   wifi_fast_connect: "false"
-#   # Define logging level: NONE, ERROR, WARN, INFO, DEBUG (Default), VERBOSE, VERY_VERBOSE
-#   log_level: "DEBUG"
-#   # Enable or disable the use of IPv6 networking on the device
-#   ipv6_enable: "false"
-
 
 esphome:
-  name: "${device_name}"
-  friendly_name: "${friendly_name}"
-  area: "${room}"
-  # name_add_mac_suffix: true
+  name: ${device_name}
+  friendly_name: ${friendly_name}
+  area: ${room}
   min_version: 2024.6.0
-  # project:
-  #   name: "${project_name}"
-  #   version: "${project_version}"
   platformio_options:
     board_build.mcu: esp32c3
     board_build.variant: esp32c3
@@ -53,68 +19,15 @@ esp32:
     type: arduino
     version: recommended
 
-# api:
-
-# ota:
-#   - platform: esphome
-
-# logger:
-#   baud_rate: 115200
-#   level: ${log_level}
-#   hardware_uart: UART0
-
-# mdns:
-#   disabled: false
-
-# web_server:
-#   port: 80
-
-# network:
-#   enable_ipv6: ${ipv6_enable}
-
-# wifi:
-#   ap: {}
-#   fast_connect: "${wifi_fast_connect}"
-#   domain: "${dns_domain}"
-
-# captive_portal:
-
-# improv_serial:
-
 esp32_improv:
   authorizer: none
 
-# dashboard_import:
-#   package_import_url: github://athom-tech/esp32-configs/athom-garage-door.yaml
-
-# sensor:
-#   - platform: uptime
-#     name: "Uptime Sensor"
-#     id: uptime_sensor
-#     entity_category: diagnostic
-#     internal: true
-
-#   - platform: wifi_signal
-#     name: "WiFi Signal dB"
-#     id: wifi_signal_db
-#     update_interval: 60s
-#     entity_category: "diagnostic"
-
-#   - platform: copy
-#     source_id: wifi_signal_db
-#     name: "WiFi Signal Percent"
-#     filters:
-#       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
-#     unit_of_measurement: "Signal %"
-#     entity_category: "diagnostic"
-#     device_class: ""
-
 binary_sensor:
   - platform: status
-    name: "Status"
+    name: Status
 
   - platform: gpio
-    name: "Contact"
+    name: Contact
     disabled_by_default: true
     device_class: garage_door
     id: contact
@@ -129,7 +42,7 @@ binary_sensor:
       number: GPIO3
       mode: INPUT_PULLUP
       inverted: true
-    name: "Button"
+    name: Button
     disabled_by_default: true
     on_multi_click:
       - timing:
@@ -144,23 +57,23 @@ binary_sensor:
 
 button:
   - platform: restart
-    name: "Restart"
+    name: Restart
     entity_category: config
 
   - platform: factory_reset
-    name: "Factory Reset"
+    name: Factory Reset
     id: Reset
     entity_category: config
 
   - platform: safe_mode
-    name: "Safe Mode"
+    name: Safe Mode
     internal: false
     entity_category: config
 
 switch:
   - platform: gpio
     pin: GPIO7
-    name: "Relay"
+    name: Relay
     id: relay
     disabled_by_default: true
     on_turn_on:
@@ -171,7 +84,7 @@ switch:
 
 light:
   - platform: status_led
-    name: "Status LED"
+    name: Status LED
     id: wifi_led
     disabled_by_default: true
     pin: GPIO4
@@ -179,8 +92,8 @@ light:
 cover:
   - platform: template
     device_class: garage
-    name: "Garage Door"
-    lambda: "return id(contact).state ? COVER_OPEN : COVER_CLOSED;"
+    name: Garage Door
+    lambda: 'return id(contact).state ? COVER_OPEN : COVER_CLOSED;'
     open_action:
       then:
        - if:
@@ -197,70 +110,3 @@ cover:
             lambda: 'return id(contact).state;'
           then:
             - switch.turn_on: relay
-
-# text_sensor:
-#   - platform: wifi_info
-#     ip_address:
-#       name: "IP Address"
-#       entity_category: diagnostic
-#     ssid:
-#       name: "Connected SSID"
-#       entity_category: diagnostic
-#     mac_address:
-#       name: "Mac Address"
-#       entity_category: diagnostic
-
-#   - platform: template
-#     name: 'Last Restart'
-#     id: device_last_restart
-#     icon: mdi:clock
-#     entity_category: diagnostic
-#     device_class: timestamp
-
-#   - platform: template
-#     name: "Uptime"
-#     entity_category: diagnostic
-#     lambda: |-
-#       int seconds = (id(uptime_sensor).state);
-#       int days = seconds / (24 * 3600);
-#       seconds = seconds % (24 * 3600);
-#       int hours = seconds / 3600;
-#       seconds = seconds % 3600;
-#       int minutes = seconds /  60;
-#       seconds = seconds % 60;
-#       if ( days > 3650 ) {
-#         return { "Starting up" };
-#       } else if ( days ) {
-#         return { (String(days) +"d " + String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
-#       } else if ( hours ) {
-#         return { (String(hours) +"h " + String(minutes) +"m "+ String(seconds) +"s").c_str() };
-#       } else if ( minutes ) {
-#         return { (String(minutes) +"m "+ String(seconds) +"s").c_str() };
-#       } else {
-#         return { (String(seconds) +"s").c_str() };
-#       }
-#     icon: mdi:clock-start
-
-# time:
-#   - platform: sntp
-#     id: sntp_time
-#   # Define the timezone of the device
-#     timezone: "${timezone}"
-#   # Change sync interval from default 5min to 6 hours (or as set in substitutions)
-#     update_interval: ${sntp_update_interval}
-#   # Set specific sntp servers to use
-#     servers: 
-#       - "${sntp_server_1}"
-#       - "${sntp_server_2}"
-#       - "${sntp_server_3}"   
-#   # Publish the time the device was last restarted
-#     on_time_sync:
-#       then:
-#         # Update last restart time, but only once.
-#         - if:
-#             condition:
-#               lambda: 'return id(device_last_restart).state == "";'
-#             then:
-#               - text_sensor.template.publish:
-#                   id: device_last_restart
-#                   state: !lambda 'return id(sntp_time).now().strftime("%a %d %b %Y - %I:%M:%S %p");'

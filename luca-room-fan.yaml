@@ -1,7 +1,7 @@
 substitutions:
-  device_name: "luca-room-fan"
-  device_id: luca_room_fan
+  device_name: luca-room-fan
   friendly_name: Luca Room Fan
   room: Luca Room
+
 packages:
   device_basis: !include templates/treatlife_fan.yaml

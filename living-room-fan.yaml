@@ -1,8 +1,8 @@
 substitutions:
   device_name: living-room-fan
-  device_id: living_room_fan
   friendly_name: Living Room Fan
   icon: mdi:fan
   room: Living Room
+
 packages:
   device_basis: !include templates/treatlife_three_way.yaml

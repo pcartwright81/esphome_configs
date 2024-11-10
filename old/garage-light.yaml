@@ -1,6 +1,5 @@
 substitutions:
   device_name: garage-light
-  device_id: garage_light
   friendly_name: Garage Light
   icon: mdi:lightbulb
 <<: !include templates/treatlife_single_pole.yaml

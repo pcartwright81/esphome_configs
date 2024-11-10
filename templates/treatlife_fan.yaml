@@ -3,10 +3,10 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
 
 uart:
   rx_pin: GPIO3
@@ -17,7 +17,7 @@ tuya:
   time_id : homeassistant_time
   
 light:
-  - platform: "tuya"
+  - platform: tuya
     name: ${room} Light
     dimmer_datapoint: 10
     switch_datapoint: 9
@@ -25,8 +25,8 @@ light:
     max_value: 1000
 
 fan:
-  - platform: "tuya"
-    name: ${room} Fan
+  - platform: tuya
+    name: ' '
     switch_datapoint: 1
     speed_datapoint: 3
     speed_count: 4

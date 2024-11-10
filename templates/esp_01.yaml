@@ -3,12 +3,12 @@ packages:
 
 esphome:
   name: ${device_name}
-  friendly_name: "${friendly_name}"
+  friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
-  area: "${room}"
+  area: ${room}
 
 switch:
   - platform: gpio
     pin: GPIO0
-    name: ${friendly_name}
+    name: ' '

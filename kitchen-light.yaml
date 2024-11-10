@@ -1,9 +1,8 @@
 substitutions:
   device_name: kitchen-light
-  device_id: kitchen_light
   friendly_name: Kitchen Light
   icon: mdi:lightbulb
-  room: "Kitchen"
+  room: Kitchen
 
 packages:
-  device_basis:   !include  templates/treatlife_three_way.yaml
+  device_basis: !include templates/treatlife_three_way.yaml

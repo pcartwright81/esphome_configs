@@ -1,8 +1,8 @@
 substitutions:
   device_name: kids-hallway-light
-  device_id: kids_hallway_light
   friendly_name: Kids Hallway Light
   icon: mdi:lightbulb
   room: Kids Hallway
+
 packages:
-  device_basis:   !include  templates/treatlife_single_pole.yaml
+  device_basis: !include templates/treatlife_single_pole.yaml

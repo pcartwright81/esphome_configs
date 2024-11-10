@@ -1,6 +1,5 @@
 substitutions:
   device_name: kids-bathroom-fan
-  device_id: kids_bathroom_fan
   friendly_name: Kids Bathroom Fan
   icon: mdi:fan
 <<: !include templates/treatlife_single_pole.yaml
