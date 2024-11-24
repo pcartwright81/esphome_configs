@@ -1,6 +1,0 @@
-substitutions:
-  device_name: master-bathroom-vanity-light
-  friendly_name: Master Bathroom Vanity Light
-  icon: mdi:lightbulb
-
-<<: !include templates/treatlife_dimmer.yaml

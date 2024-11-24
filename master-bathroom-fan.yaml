@@ -2,6 +2,6 @@ substitutions:
   device_name: master-bathroom-fan
   friendly_name: Master Bathroom Fan
   room: Master Bathroom
-
+  light_max: '950'
 packages:
   device_basis: !include templates/treatlife_fan.yaml

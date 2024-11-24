@@ -9,3 +9,4 @@
 **/platformio.ini
 /secrets.yaml
 sync.ffs_db
+sync.ffs_db

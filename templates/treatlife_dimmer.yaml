@@ -1,12 +1,17 @@
 packages:
   device_basis: !include network_ha_config.yaml
 
+substitutions:
+  light_min: '100'
+  light_max: '1000'
+
 esphome:
   name: ${device_name}
   friendly_name: ${friendly_name}
   platform: ESP8266
   board: esp01_1m
   area: ${room}
+
    
 uart:
   rx_pin: GPIO3
@@ -21,7 +26,8 @@ light:
     name: ' '
     dimmer_datapoint: 2
     switch_datapoint: 1
-    min_value: 100
-    max_value: 1000
+    min_value: ${light_min}
+    max_value: ${light_max}
+    restore_mode: RESTORE_DEFAULT_OFF
 
 

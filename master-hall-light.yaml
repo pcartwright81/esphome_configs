@@ -5,4 +5,5 @@ substitutions:
   room: Master Bedroom
 
 packages:
-  device_basis: !include templates/treatlife_single_pole.yaml
+ device_basis: !include templates/treatlife_dimmer.yaml
+
