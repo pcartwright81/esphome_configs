@@ -1,9 +1,0 @@
-substitutions:
-  device_name: ender3v2-switch
-  friendly_name: Ender3v2
-  # Higher value gives lower watt readout
-  current_res: 0.00221
-  # Lower value gives lower voltage readout
-  voltage_div: 940
-
-<<: !include templates/efun_plug.yaml

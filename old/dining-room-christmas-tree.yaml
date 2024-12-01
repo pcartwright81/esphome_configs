@@ -1,8 +1,0 @@
-substitutions:
-  device_name: dining-room-christmas-tree
-  friendly_name: Dining Room Christmas Tree
-  # Higher value gives lower watt readout
-  current_res: 0.00221
-  # Lower value gives lower voltage readout
-  voltage_div: 940
-<<: !include templates/efun_plug.yaml

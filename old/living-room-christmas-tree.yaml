@@ -1,9 +1,0 @@
-substitutions:
-  device_name: living-room-christmas-tree
-  friendly_name: Living Rooom Christmas Tree
-  # Higher value gives lower watt readout
-  current_res: 0.00221
-  # Lower value gives lower voltage readout
-  voltage_div: 940
-
-<<: !include templates/efun_plug.yaml

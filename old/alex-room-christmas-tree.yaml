@@ -1,9 +1,0 @@
-substitutions:
-  device_name: alex-room-christmas-tree
-  friendly_name: Alex Room Christmas Tree
-  # ip_address: 192.168.86.30
-  # Higher value gives lower watt readout
-  current_res: 0.00221
-  # Lower value gives lower voltage readout
-  voltage_div: 940
-<<: !include templates/efun_plug.yaml

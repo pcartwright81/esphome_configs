@@ -1,0 +1,8 @@
+substitutions:
+  device_name: spare-switch
+  friendly_name: Spare Switch
+  icon: mdi:lightbulb
+  room: Spare
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

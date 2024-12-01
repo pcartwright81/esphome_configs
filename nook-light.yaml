@@ -1,0 +1,8 @@
+substitutions:
+  device_name: nook-light
+  friendly_name: nook-light
+  icon: mdi:lightbulb
+  room: Nook
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

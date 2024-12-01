@@ -1,6 +1,0 @@
-substitutions:
-  device_name: master-bathroom-shower-light
-  friendly_name: Master Bathroom Shower Light
-  icon: mdi:lightbulb
-
-<<: !include templates/treatlife_single_pole.yaml

@@ -1,8 +1,8 @@
 substitutions:
-  device_name: master-hall-light
-  friendly_name: Master Hall Light
+  device_name: spare-dimmer
+  friendly_name: Spare Dimmer
   icon: mdi:lightbulb
-  room: Master Bedroom
+  room: Spare
 
 packages:
   device_basis: !include templates/treatlife_dimmer.yaml

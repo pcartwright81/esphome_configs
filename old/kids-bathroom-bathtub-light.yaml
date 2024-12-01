@@ -1,5 +1,0 @@
-substitutions:
-  device_name: kids-bathroom-bathtub-light
-  friendly_name: Kids Bathroom Bathtub Light
-  icon: mdi:lightbulb  
-<<: !include templates/treatlife_single_pole.yaml

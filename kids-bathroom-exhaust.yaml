@@ -1,0 +1,8 @@
+substitutions:
+  device_name: kids-bathroom-exhaust
+  friendly_name: Kids Bathroom Exhaust
+  icon: mdi:lightbulb
+  room: Kids Bathroom
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

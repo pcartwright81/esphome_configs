@@ -1,0 +1,7 @@
+substitutions:
+  device_name: big-garage-light
+  friendly_name: Big Garage Light
+  icon: mdi:lightbulb
+  room: Big Garage
+packages:
+  device_basis: !include templates/treatlife_three_way.yaml

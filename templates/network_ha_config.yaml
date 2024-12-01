@@ -1,12 +1,13 @@
 substitutions:
   # Enables faster network connections, with last connected SSID being connected to and no full scan for SSID being undertaken
-  wifi_fast_connect: 'true'
+  wifi_fast_connect: "true"
   # Enable or disable the use of IPv6 networking on the device
-  ipv6_enable: 'false'
+  ipv6_enable: "false"
   # Set the timezone. Useful if itis in a location different to the HA server. Can be entered in unix Country/Area format (i.e. Australia/Sydney)
-  timezone: ''
+  timezone: ""
   # Set the duration between the sntp service polling ntp.org servers for an update
-  time_update_interval: 6h
+  time_update_interval:
+    6h
     # Define logging level: NONE, ERROR, WARN, INFO, DEBUG (Default), VERBOSE, VERY_VERBOSE
   log_level: ERROR
 
@@ -65,9 +66,9 @@ sensor:
     name: WiFi Signal Percent
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
-    unit_of_measurement: '%'
+    unit_of_measurement: "%"
     entity_category: diagnostic
-
+    device_class: ""
 
 text_sensor:
   - platform: wifi_info
@@ -86,7 +87,7 @@ text_sensor:
     id: device_last_restart
     icon: mdi:clock
     entity_category: diagnostic
-#    device_class: timestamp
+  #    device_class: timestamp
   - platform: version
     name: ESPHome Version
 
@@ -118,19 +119,18 @@ text_sensor:
 time:
   - platform: homeassistant
     id: homeassistant_time
-  # Define the timezone of the device
+    # Define the timezone of the device
     timezone: ${timezone}
-  # Change sync interval from default 5min to 6 hours (or as set in substitutions)
+    # Change sync interval from default 5min to 6 hours (or as set in substitutions)
     update_interval: ${time_update_interval}
-  # Publish the time the device was last restarted
+    # Publish the time the device was last restarted
     on_time_sync:
       then:
         # Update last restart time, but only once.
         - if:
             condition:
-               lambda: 'return id(device_last_restart).state == "";'
+              lambda: 'return id(device_last_restart).state == "";'
             then:
               - text_sensor.template.publish:
                   id: device_last_restart
                   state: !lambda 'return id(homeassistant_time).now().strftime("%a %d %b %Y - %I:%M:%S %p");'
-

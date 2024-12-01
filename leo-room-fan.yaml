@@ -2,5 +2,6 @@ substitutions:
   device_name: leo-room-fan
   friendly_name: Leo Room Fan
   room: Leo Room
-
-<<: !include templates/treatlife_fan.yaml
+  light_max: "950"
+packages:
+  device_basis: !include templates/treatlife_fan.yaml

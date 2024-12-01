@@ -1,6 +1,0 @@
-substitutions:
-  device_name: master-bathroom-toilet-light
-  friendly_name: Master Bathroom Toilet Light
-  icon: mdi:lightbulb
-
-<<: !include templates/treatlife_dimmer.yaml

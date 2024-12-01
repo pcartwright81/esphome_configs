@@ -1,0 +1,8 @@
+substitutions:
+  device_name: leo-bathroom-exhaust
+  friendly_name: Leo Bathroom Exhaust
+  icon: mdi:fan
+  room: Leo Bathroom
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

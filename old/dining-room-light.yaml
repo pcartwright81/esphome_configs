@@ -1,5 +1,0 @@
-substitutions:
-  device_name: dining-room-light
-  friendly_name: Dining Room Light
-
-<<: !include templates/treatlife_three_way.yaml

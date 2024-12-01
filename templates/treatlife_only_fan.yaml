@@ -14,11 +14,11 @@ uart:
   baud_rate: 115200
 
 tuya:
-  time_id : homeassistant_time
-  
+  time_id: homeassistant_time
+
 fan:
   - platform: tuya
-    name: ' '
+    name: " "
     switch_datapoint: 1
     speed_datapoint: 3
     speed_count: 4

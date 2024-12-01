@@ -1,0 +1,8 @@
+substitutions:
+  device_name: back-yard-left-light
+  friendly_name: Back Yard Left Light
+  icon: mdi:lightbulb
+  room: Back Yard
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

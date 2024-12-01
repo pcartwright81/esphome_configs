@@ -20,7 +20,7 @@ esphome:
 
 status_led:
   pin:
-    number: GPIO5   # Red LED
+    number: GPIO5 # Red LED
     inverted: True
     allow_other_uses: true
 binary_sensor:
@@ -43,7 +43,7 @@ binary_sensor:
     id: button
     on_press:
       then:
-      - switch.toggle: light_switch
+        - switch.toggle: light_switch
     internal: True
 light:
   - platform: binary
@@ -73,7 +73,7 @@ switch:
     internal: True
 
   - platform: template
-    name: ' '
+    name: " "
     id: light_switch
     icon: ${icon}
     lambda: |-
@@ -83,14 +83,14 @@ switch:
         return false;
       }
     turn_on_action:
-    - if:
-        condition:
-          - binary_sensor.is_off: power_sensor
-        then:
-          - switch.toggle: relay
+      - if:
+          condition:
+            - binary_sensor.is_off: power_sensor
+          then:
+            - switch.toggle: relay
     turn_off_action:
-    - if:
-        condition:
-          - binary_sensor.is_on: power_sensor
-        then:
-          - switch.toggle: relay
+      - if:
+          condition:
+            - binary_sensor.is_on: power_sensor
+          then:
+            - switch.toggle: relay

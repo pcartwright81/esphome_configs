@@ -1,0 +1,7 @@
+substitutions:
+  device_name: spare-fan
+  friendly_name: Spare Fan
+  room: Spare
+
+packages:
+  device_basis: !include templates/treatlife_fan.yaml

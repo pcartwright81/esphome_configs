@@ -1,4 +1,0 @@
-substitutions:
-  device_name: breakfast-area-light
-  friendly_name: Breakfast Area Light
-<<: !include templates/treatlife_three_way.yaml

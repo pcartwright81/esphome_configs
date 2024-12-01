@@ -1,8 +1,8 @@
 substitutions:
-  device_name: master-hall-light
-  friendly_name: Master Hall Light
+  device_name: kids-bathroom-light
+  friendly_name: Kids Bathroom Light
   icon: mdi:lightbulb
-  room: Master Bedroom
+  room: Kids Bathroom
 
 packages:
   device_basis: !include templates/treatlife_dimmer.yaml

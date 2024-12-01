@@ -1,0 +1,8 @@
+substitutions:
+  device_name: half-bath-exhaust
+  friendly_name: Half Bath Exhaust
+  icon: mdi:lightbulb
+  room: Half Bath
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

@@ -1,4 +1,0 @@
-substitutions:
-  device_name: fireplace
-  friendly_name: Fireplace
-<<: !include templates/esp_01.yaml

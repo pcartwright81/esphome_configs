@@ -1,6 +1,0 @@
-substitutions:
-  device_name: side-yard-light
-  friendly_name: Side Yard Light
-  icon: mdi:lightbulb
-
-<<: !include templates/treatlife_single_pole.yaml

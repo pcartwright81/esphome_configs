@@ -1,5 +1,0 @@
-substitutions:
-  device_name: back-porch-fan
-  friendly_name: Back Porch Fan
-  room: Back Porch
-<<: !include templates/treatlife_fan.yaml

@@ -1,0 +1,8 @@
+substitutions:
+  device_name: half-bath-light
+  friendly_name: Half Bath Light
+  icon: mdi:lightbulb
+  room: Half Bath
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

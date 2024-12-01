@@ -11,4 +11,4 @@ esphome:
 switch:
   - platform: gpio
     pin: GPIO0
-    name: ' '
+    name: " "

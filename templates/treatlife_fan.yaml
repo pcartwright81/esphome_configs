@@ -2,8 +2,8 @@ packages:
   device_basis: !include network_ha_config.yaml
 
 substitutions:
-  light_min: '100'
-  light_max: '1000'
+  light_min: "100"
+  light_max: "1000"
 
 esphome:
   name: ${device_name}
@@ -18,8 +18,8 @@ uart:
   baud_rate: 115200
 
 tuya:
-  time_id : homeassistant_time
-  
+  time_id: homeassistant_time
+
 light:
   - platform: tuya
     name: ${room} Light
@@ -31,7 +31,7 @@ light:
 
 fan:
   - platform: tuya
-    name: ' '
+    name: " "
     switch_datapoint: 1
     speed_datapoint: 3
     speed_count: 4

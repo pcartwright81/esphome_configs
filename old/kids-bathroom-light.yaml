@@ -1,4 +1,0 @@
-substitutions:
-  device_name: kids-bathroom-light
-  friendly_name: Kids Bathroom Light
-<<: !include templates/treatlife_dimmer.yaml

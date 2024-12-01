@@ -1,0 +1,8 @@
+substitutions:
+  device_name: bonus-room-game-light
+  friendly_name: Bonus Room Game Light
+  icon: mdi:lightbulb
+  room: Bonus Room
+
+packages:
+  device_basis: !include templates/treatlife_single_pole.yaml

@@ -2,10 +2,10 @@ substitutions:
   device_name: ender3v3se-switch
   friendly_name: Ender 3 V3 SE
   # Higher value gives lower watt readout
-  current_res: '0.00221'
+  current_res: "0.00221"
   # Lower value gives lower voltage readout
-  voltage_div: '940'
+  voltage_div: "940"
   room: Upstairs Closet
 
 packages:
-  device_basis:  !include templates/efun_plug.yaml
+  device_basis: !include templates/efun_plug.yaml

@@ -28,7 +28,7 @@ status_led:
 
 switch:
   - platform: gpio
-    name: ' '
+    name: " "
     id: relay
     pin: GPIO15
     restore_mode: RESTORE_DEFAULT_OFF

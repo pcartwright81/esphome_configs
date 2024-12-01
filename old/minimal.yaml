@@ -1,5 +1,0 @@
-esphome:
-  name: minimal
-  platform: ESP8266
-  board: esp01_1m
-<<: !include ./templates/network_ha_config.yaml 
