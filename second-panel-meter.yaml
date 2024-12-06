@@ -1,0 +1,32 @@
+esphome:
+  name: second-panel-meter
+  friendly_name: second-panel-meter
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "LTwoXy/W1iGEE5tz7YOU2vRNl0q8M6Iyg9ZsSFXwqto="
+
+ota:
+  - platform: esphome
+    password: "2ec9f76837cad2b648fbefd5b5672e97"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Second-Panel-Meter"
+    password: "kEfqva4wF9dW"
+
+captive_portal:
+    
