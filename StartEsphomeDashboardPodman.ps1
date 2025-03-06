@@ -1,0 +1,1 @@
+ podman run -p 6052:6052 -e ESPHOME_DASHBOARD_USE_PING=true --rm -v "${PWD}:/config" -it ghcr.io/esphome/esphome 

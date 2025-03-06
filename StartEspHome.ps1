@@ -1,4 +1,4 @@
-. "C:\Python312\Venv\EspHome\Scripts\Activate.ps1"
+.venv\Scripts\activate
 pip.exe install esphome -U
 esphome version
 Start-Process chrome.exe http://localhost:6052/

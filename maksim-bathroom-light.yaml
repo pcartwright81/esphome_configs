@@ -1,8 +1,8 @@
 substitutions:
-  device_name: leo-bathroom-light
-  friendly_name: Leo Bathroom Light
+  device_name: maksim-bathroom-light
+  friendly_name: Maksim Bathroom Light
   icon: mdi:lightbulb
-  room: Leo Bathroom
+  room: Maksim Bathroom
 
 packages:
   device_basis: !include templates/treatlife_dimmer.yaml

@@ -1,0 +1,50 @@
+packages:
+  device_basis: !include network_ha_config.yaml
+
+esphome:
+  name: ${device_name}
+  friendly_name: ${friendly_name}
+  area: ${room}
+
+esp8266:
+  board: esp01_1m
+
+output:
+  - platform: gpio
+    pin: GPIO12
+    id: switch_output
+
+  - platform: gpio
+    pin:
+      number: GPIO4
+    id: white_led_output
+
+light:
+  - platform: binary
+    name: " "
+    id: light_switch
+    output: switch_output
+    on_turn_on:
+      - light.turn_on: white_led
+    on_turn_off:
+      - light.turn_off: white_led
+    restore_mode: RESTORE_DEFAULT_OFF
+
+  - platform: binary
+    id: white_led
+    output: white_led_output
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO13
+    id: power_sensor
+    on_press:
+      - light.toggle: light_switch
+    internal: True
+
+status_led:
+  # Red LED
+  pin:
+    number: GPIO5
+    inverted: yes

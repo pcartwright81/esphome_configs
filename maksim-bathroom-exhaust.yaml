@@ -1,8 +1,8 @@
 substitutions:
-  device_name: half-bath-exhaust
-  friendly_name: Half Bath Exhaust
+  device_name: maksim-bathroom-exhaust
+  friendly_name: Maksim Bathroom Exhaust
   icon: mdi:fan
-  room: Half Bath
+  room: Maksim Bathroom
 
 packages:
   device_basis: !include templates/treatlife_single_pole_fan.yaml

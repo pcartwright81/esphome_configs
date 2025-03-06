@@ -1,1 +1,0 @@
-. "C:\Python312\Venv\EspHome\Scripts\Activate.ps1"

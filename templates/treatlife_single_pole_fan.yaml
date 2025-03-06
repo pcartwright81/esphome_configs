@@ -4,9 +4,10 @@ packages:
 esphome:
   name: ${device_name}
   friendly_name: ${friendly_name}
-  platform: ESP8266
-  board: esp01_1m
   area: ${room}
+
+esp8266:
+  board: esp01_1m
 
 output:
   - platform: gpio
@@ -18,15 +19,15 @@ output:
       number: GPIO4
     id: white_led_output
 
-light:
+fan:
   - platform: binary
     name: " "
-    id: light_switch
+    id: fan_switch
     output: switch_output
     on_turn_on:
-      - light.turn_on: white_led
+      - fan.turn_on: white_led
     on_turn_off:
-      - light.turn_off: white_led
+      - fan.turn_off: white_led
     restore_mode: RESTORE_DEFAULT_OFF
 
   - platform: binary
@@ -39,7 +40,7 @@ binary_sensor:
       number: GPIO13
     id: power_sensor
     on_press:
-      - light.toggle: light_switch
+      - fan.toggle: fan_switch
     internal: True
 
 status_led:
