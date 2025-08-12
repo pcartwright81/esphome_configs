@@ -1,6 +1,6 @@
 substitutions:
-  device_name: living-room-fan
-  friendly_name: Living Room Fan
+  device_name: living-room-fan-switch
+  friendly_name: Living Room Fan Switch
   icon: mdi:fan
   room: Living Room
 

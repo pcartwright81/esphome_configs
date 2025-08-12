@@ -1,0 +1,11 @@
+substitutions:
+  device_name: living-room-shelf-lights
+  friendly_name: Living Room Shelf Lights
+  # Higher value gives lower watt readout
+  current_res: "0.00221"
+  # Lower value gives lower voltage readout
+  voltage_div: "940"
+  room: Living Room
+
+packages:
+  device_basis: !include templates/efun_plug.yaml

@@ -1,0 +1,11 @@
+substitutions:
+  device_name: air-compressor-switch
+  friendly_name: Air Compressor
+  # Higher value gives lower watt readout
+  current_res: "0.00221"
+  # Lower value gives lower voltage readout
+  voltage_div: "940"
+  room: Big Garage
+
+packages:
+  device_basis: !include templates/efun_plug.yaml

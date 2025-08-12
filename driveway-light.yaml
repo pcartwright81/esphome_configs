@@ -1,8 +1,8 @@
 substitutions:
-  device_name: back-yard-light
-  friendly_name: Back Yard Light
+  device_name: driveway-light
+  friendly_name: Driveway Light
   icon: mdi:lightbulb
-  room: Back Yard
+  room: Driveway
 
 packages:
   device_basis: !include templates/treatlife_single_pole_light.yaml

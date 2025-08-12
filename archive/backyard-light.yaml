@@ -1,8 +1,8 @@
 substitutions:
-  device_name: nook-light
-  friendly_name: Nook Light
+  device_name: backyard-light
+  friendly_name: Backyard Light
   icon: mdi:lightbulb
-  room: Nook
+  room: Backyard
 
 packages:
   device_basis: !include templates/treatlife_single_pole_light.yaml

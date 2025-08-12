@@ -1,8 +1,0 @@
-substitutions:
-  device_name: master-hall-light
-  friendly_name: Master Hall Light
-  icon: mdi:lightbulb
-  room: Master Bedroom
-
-packages:
-  device_basis: !include templates/treatlife_dimmer.yaml
