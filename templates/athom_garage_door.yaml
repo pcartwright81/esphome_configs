@@ -16,8 +16,13 @@ esp32:
   flash_size: 4MB
   variant: ESP32C3
   framework:
-    type: arduino
+    type: esp-idf
     version: recommended
+
+logger:
+  baud_rate: 115200
+  level: ${log_level}
+  hardware_uart: UART0
 
 esp32_improv:
   authorizer: none
