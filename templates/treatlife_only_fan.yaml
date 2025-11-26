@@ -19,7 +19,7 @@ tuya:
 
 fan:
   - platform: tuya
-    name: " "
+    name: None
     switch_datapoint: 1
     speed_datapoint: 3
     speed_count: 4

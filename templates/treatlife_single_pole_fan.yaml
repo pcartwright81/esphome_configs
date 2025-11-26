@@ -21,7 +21,7 @@ output:
 
 fan:
   - platform: binary
-    name: " "
+    name: None
     id: fan_switch
     output: switch_output
     on_turn_on:

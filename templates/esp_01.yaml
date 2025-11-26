@@ -12,4 +12,4 @@ esp8266:
 switch:
   - platform: gpio
     pin: GPIO0
-    name: " "
+    name: None

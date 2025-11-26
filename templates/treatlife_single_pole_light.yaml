@@ -21,7 +21,7 @@ output:
 
 light:
   - platform: binary
-    name: " "
+    name: None
     id: light_switch
     output: switch_output
     on_turn_on:

@@ -26,7 +26,7 @@ tuya:
 
 light:
   - platform: tuya
-    name: " "
+    name: None
     dimmer_datapoint: 2
     switch_datapoint: 1
     min_value: ${light_min}
