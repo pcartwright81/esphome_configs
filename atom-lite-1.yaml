@@ -1,0 +1,6 @@
+substitutions:
+  device_name: atom-lite-1
+  friendly_name: Atom-Lite-1
+
+packages:
+  device_basis: !include templates/atom_lite.yaml
