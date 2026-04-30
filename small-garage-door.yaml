@@ -3,6 +3,7 @@ substitutions:
   friendly_name: Small Garage Door
   room: Small Garage
   status_inverted: "true"
+  bluetooth_enabled: "true"
 
 packages:
   device_basis: !include templates/athom_garage_door.yaml

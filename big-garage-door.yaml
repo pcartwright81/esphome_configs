@@ -3,6 +3,7 @@ substitutions:
   friendly_name: Big Garage Door
   room: Big Garage
   status_inverted: "true"
+  bluetooth_enabled: "false"
 
 packages:
   device_basis: !include templates/athom_garage_door.yaml
