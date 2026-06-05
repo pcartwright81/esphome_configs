@@ -1,0 +1,8 @@
+substitutions:
+  device_name: athom-rf-ir-1
+  friendly_name: Athom-RF-IR-1
+  climate_package: "athom_rf_ir_climate_disabled.yaml"
+  room: Dining Room
+
+packages:
+  device_basis: !include templates/athom_rf_ir.yaml

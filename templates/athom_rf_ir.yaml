@@ -1,0 +1,142 @@
+packages:
+  device_basis: !include network_ha_config.yaml
+  climate_optional: !include ${climate_package}
+
+substitutions:  
+  device_description: "athom esp32 RF433 IR Remote"
+  project_name: "China Athom Technology.Athom RF IR Remote"
+  project_version: "v3.0.0"
+  AC_Platform_name: "coolix"
+
+  RF_RX_PIN: GPIO19
+  RF_TX_PIN: GPIO18
+  IR_RX_PIN: GPIO33
+  IR_TX_PIN: GPIO25
+  Button_PIN: GPIO0
+  LED_PIN: GPIO27
+
+esphome:
+  name: "${device_name}"
+  friendly_name: "${friendly_name}"
+  comment: "${device_description}"
+  area: "${room}"
+  min_version: 2025.8.0
+  project:
+    name: "${project_name}"
+    version: "${project_version}"
+  platformio_options:
+    board_build.flash_mode: dio
+
+esp32:
+  variant: esp32
+  flash_size: 8MB
+  framework:
+    type: esp-idf
+    version: recommended
+    sdkconfig_options:
+      CONFIG_BT_BLE_42_FEATURES_SUPPORTED: y
+      CONFIG_ESP_TASK_WDT_TIMEOUT_S: "10"
+
+preferences:
+  flash_write_interval: 1min
+
+esp32_ble_tracker:
+  scan_parameters:
+    continuous: false
+    active: true
+    interval: 320ms
+    window: 300ms
+
+bluetooth_proxy:
+  active: true
+
+remote_receiver:
+  - pin:
+      number: ${RF_RX_PIN}
+      inverted: true
+    dump: all
+    tolerance: 25%
+    id: rf_receiver
+
+  - pin:
+      number: ${IR_RX_PIN}
+      inverted: true
+    dump: all
+    tolerance: 25%
+    id: ir_receiver
+
+remote_transmitter:
+  - pin:
+      number: ${RF_TX_PIN}
+    carrier_duty_percent: 100%
+    non_blocking: true
+    id: rf_transmitter
+
+  - pin:
+      number: ${IR_TX_PIN}
+      inverted: false
+    carrier_duty_percent: 50%
+    non_blocking: true
+    id: ir_transmitter
+
+infrared:
+  - platform: ir_rf_proxy
+    name: IR Proxy Transmitter
+    id: ir_proxy_tx
+    remote_transmitter_id: ir_transmitter
+
+  - platform: ir_rf_proxy
+    name: IR Proxy Receiver
+    id: ir_proxy_rx
+    remote_receiver_id: ir_receiver
+
+  - platform: ir_rf_proxy
+    name: RF Proxy Transmitter
+    frequency: 433 MHz
+    id: rf_proxy_tx
+    remote_transmitter_id: rf_transmitter
+
+  - platform: ir_rf_proxy
+    name: RF Proxy Receiver
+    id: rf_proxy_rx
+    remote_receiver_id: rf_receiver
+
+binary_sensor:
+  - platform: status
+    name: "Status"
+    entity_category: diagnostic
+
+  - platform: gpio
+    pin:
+      number: ${Button_PIN}
+      mode:
+        input: true
+      inverted: true
+    name: "Button"
+    disabled_by_default: true
+    on_multi_click:
+      - timing:
+          - ON for at least 4s
+        then:
+          - button.press: factory_reset_btn
+
+button:
+  - platform: restart
+    name: "Restart"
+    entity_category: config
+
+  - platform: factory_reset
+    name: "Factory Reset"
+    id: factory_reset_btn
+    entity_category: config
+
+  - platform: safe_mode
+    name: "Safe Mode"
+    id: button_safe_mode
+    entity_category: config
+
+light:
+  - platform: status_led
+    name: "Status LED"
+    disabled_by_default: true
+    pin: ${LED_PIN}

@@ -1,0 +1,29 @@
+substitutions:
+  device_name: athom-rf-ir-1
+  friendly_name: Athom-RF-IR-1
+  climate_package: athom_rf_ir_climate_disabled.yaml
+  log_level: DEBUG
+  room: Dining Room
+
+packages:
+  device_basis: !include templates/athom_rf_ir.yaml
+
+
+button:
+  - platform: template
+    name: "IR ON"
+    on_press:
+      - remote_transmitter.transmit_nec:
+          transmitter_id: ir_transmitter
+          address: 0xFF00
+          command: 0xFE01
+          command_repeats: 1
+
+  - platform: template
+    name: "IR OFF"
+    on_press:
+      - remote_transmitter.transmit_nec:
+          transmitter_id: ir_transmitter
+          address: 0xFF00
+          command: 0xFF00
+          command_repeats: 1

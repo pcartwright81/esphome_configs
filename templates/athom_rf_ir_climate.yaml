@@ -1,0 +1,5 @@
+climate:
+  - platform: ${AC_Platform_name}
+    transmitter_id: ir_transmitter
+    name: "AC"
+    receiver_id: ir_receiver

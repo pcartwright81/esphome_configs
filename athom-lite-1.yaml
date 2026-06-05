@@ -1,0 +1,6 @@
+substitutions:
+  device_name: athom-lite-1
+  friendly_name: Athom-Lite-1
+
+packages:
+  device_basis: !include templates/athom_lite.yaml
